@@ -2,10 +2,12 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import * as VerticalTimelineLib from "react-vertical-timeline-component";
+const VerticalTimeline =
+  VerticalTimelineLib.VerticalTimeline as unknown as React.FC<any>;
+const VerticalTimelineElement =
+  VerticalTimelineLib.VerticalTimelineElement as unknown as React.FC<any>;
+
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
