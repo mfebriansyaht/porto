@@ -4,6 +4,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import arsygasImg from "@/public/arsy.webp";
 import distributorImg from "@/public/arsy p.webp";
 import ctconnectImg from "@/public/ct.webp";
+import gbkImage from "@/public/gbk.webp";
 import bankMegaImg from "@/public/mega.png"
 
 export const links = [
@@ -72,6 +73,14 @@ export const experiencesData = [
 
 
 export const projectsData = [
+   {
+  title: "Love GBK",
+  description:
+    "I worked as a Mobile Apps Developer on this project for GBK Jakarta. Love GBK is the official app of Gelora Bung Karno, enabling users to explore venues, discover events, book sports facilities, and track their activities seamlessly.",
+  tags: ["Flutter", "Bloc", "REST API", "Firebase", "Google OAuth", "Secure Encryption"],
+  imageUrl: gbkImage,
+  playStoreUrl: "https://play.google.com/store/apps/details?id=id.gbk.mobile"
+},
   {
     title: "CT Connect",
     description:

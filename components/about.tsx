@@ -21,7 +21,7 @@ export default function About() {
       <p className="mb-3">
         A <span className="font-medium">passionate Fullstack developer</span>{" "}
         with over{" "}
-        <span className="font-medium">3 years of hands-on experience</span> in
+        <span className="font-medium">4 years of hands-on experience</span> in
         building full-stack web and mobile applications. Adept at working across
         a range of technologies including{" "}
         <span className="font-medium">
