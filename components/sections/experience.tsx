@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { ArrowUp, Briefcase, GraduationCap } from "lucide-react";
 import { experience } from "@/lib/data";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -60,6 +60,14 @@ export function Experience() {
                         </div>
                       ))}
                     </div>
+                    {item.link && (
+                      <a
+                        href={item.link.href}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] hover:underline"
+                      >
+                        {item.link.label} <ArrowUp className="h-4 w-4" aria-hidden />
+                      </a>
+                    )}
                   </article>
                 </Reveal>
               </li>

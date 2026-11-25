@@ -14,11 +14,31 @@ describe("data", () => {
       ["Bachelor of Informatics", "2017 – 2021"],
     ]);
   });
-  it("has 7 skill groups in CV order", () =>
+  it("profile framing", () => {
+    expect(profile.title).toBe("Full-Stack Engineer");
+    expect(profile.subtitle).toBe("Web, mobile & backend systems for banking");
+    expect(profile.availability).toBe("Open to Full-Stack roles");
+    expect(profile.stack).toEqual(["Next.js", "Node.js", "Laravel", "Kotlin", "PostgreSQL", "Kafka", "Kubernetes"]);
+  });
+  it("skills grouped by layer", () =>
     expect(skills.map((s) => s.group)).toEqual([
-      "Languages", "Mobile", "Web & Backend", "Data & Messaging",
+      "Frontend", "Backend", "Mobile", "Data & Messaging",
       "DevOps & Observability", "AI", "Security & Delivery",
     ]));
+  it("every CV skill appears exactly once", () => {
+    const all = skills.flatMap((s) => s.items);
+    expect(new Set(all).size).toBe(all.length);
+    for (const s of ["Kotlin", "TypeScript", "JavaScript", "PHP", "Java", "Dart", "SQL", "Spring Boot", "Ionic"]) {
+      expect(all).toContain(s);
+    }
+  });
+  it("bank mega item is compact and links to case studies", () => {
+    const bm = experience[0];
+    expect(bm.groups.flatMap((g) => g.bullets)).toHaveLength(3);
+    expect(bm.link).toEqual({ label: "See case studies", href: "#work" });
+  });
+  it("no lead wording", () =>
+    expect(JSON.stringify({ profile, experience, skills })).not.toMatch(/\blead\b/i));
   it("featured work ids", () =>
     expect(featuredWork.map((f) => f.id)).toEqual([
       "m-smile", "loyalty", "observability", "ai-gateway",

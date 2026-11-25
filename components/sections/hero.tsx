@@ -44,8 +44,17 @@ export function Hero() {
           </p>
           <div className="hero-in" style={d(400)}>
             <p className="mt-3 text-lg text-[var(--muted)]">{profile.subtitle}</p>
-            <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-[var(--muted)]">
-              <MapPin className="h-4 w-4" aria-hidden /> {profile.location}
+            <p className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
+              <span className="inline-flex items-center gap-2 font-medium text-[var(--fg)]">
+                <span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden />
+                {profile.availability}
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[var(--muted)]">
+                <MapPin className="h-4 w-4" aria-hidden /> {profile.location}
+              </span>
+            </p>
+            <p className="mt-3 font-mono text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
+              {profile.stack.join(" · ")}
             </p>
 
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -102,12 +111,6 @@ export function Hero() {
             </div>
           ))}
         </dl>
-      </div>
-
-      <div className="hero-in mt-10" style={d(300)}>
-        <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-[var(--muted)]">
-          {profile.summary}
-        </p>
       </div>
     </section>
   );

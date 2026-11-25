@@ -5,8 +5,10 @@
 export const profile = {
   name: "Moch Febriansyah Trisnadi",
   shortName: "Febriansyah",
-  title: "Software Engineer",
-  subtitle: "Full-Stack & Mobile · Banking Systems",
+  title: "Full-Stack Engineer",
+  subtitle: "Web, mobile & backend systems for banking",
+  availability: "Open to Full-Stack roles",
+  stack: ["Next.js", "Node.js", "Laravel", "Kotlin", "PostgreSQL", "Kafka", "Kubernetes"],
   location: "South Jakarta, Indonesia",
   summary:
     "Software engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Developer on the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
@@ -182,6 +184,7 @@ export type ExperienceItem = {
   period: string;
   kind: "work" | "education";
   groups: { heading?: string; bullets: string[] }[];
+  link?: { label: string; href: `#${string}` };
 };
 
 export const experience: ExperienceItem[] = [
@@ -193,40 +196,14 @@ export const experience: ExperienceItem[] = [
     kind: "work",
     groups: [
       {
-        heading: "Mobile Banking",
         bullets: [
-          "Developer on the M-Smile mobile banking app revamp, rebuilding it from React Native to Kotlin Multiplatform and Compose Multiplatform with a single shared codebase for Android and iOS.",
-          "Implemented eKYC face verification, HSM-based request encryption with certificate pinning, and seamless migration of login, biometric settings, and user preferences from the previous app without re-registration.",
-          "Built a shared design system foundation (consistent components, accessibility for large text sizes, unified error and offline handling) applied across all app modules.",
-          "Developed the CT Connect Flutter app for communication, onboarding, jobs, and merchant promotions; contributed features to the existing mobile banking app.",
-        ],
-      },
-      {
-        heading: "Platform, Infrastructure & Observability",
-        bullets: [
-          "Developer on the production Loyalty platform: provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
-          "Deployed microservices to Kubernetes (Rancher RKE) using ArgoCD GitOps and Jenkins pipelines; troubleshot pod failures, configuration, and connectivity issues across environments.",
-          "Built a standardized OpenTelemetry instrumentation package for Java 8+ applications with sensitive-data masking, integrated with SigNoz for metrics, traces, and logs.",
-          "Built a TypeScript/Node.js pipeline exporting customer engagement data from Insider to S3-compatible storage, with a Fastify API for downstream teams and Jest test coverage.",
-        ],
-      },
-      {
-        heading: "Finance Operations Automation",
-        bullets: [
-          "Automated third-party biller reconciliation (Artajasa, Finnet), general-ledger posting, and fund settlement workflows (Laravel, SQL Server).",
-          "Built bulk posting for offline credit card payments via BCA and Mandiri channels, including multi-level approval and reporting for Mega and non-Mega payments.",
-          "Developed merchant settlement reporting that imports transaction data, supports bulk upload and approval, and emails Excel reports automatically.",
-          "Created a foreign-exchange claim, approval, and reimbursement workflow (Laravel) and automated Mark-to-Market statement generation, replacing manual Excel processes.",
-          "Built a Next.js/Fastify payroll onboarding platform digitizing payroll account opening for corporate employees, and a real-time complaint monitoring dashboard (Next.js, Express.js).",
-        ],
-      },
-      {
-        heading: "AI",
-        bullets: [
-          "Developed an AI-powered chatbot and built an internal AI Gateway centralizing access to AI services across the bank.",
+          "Mobile banking: M-Smile revamp in Kotlin Multiplatform and Compose Multiplatform, and the CT Connect Flutter app.",
+          "Platform: Loyalty platform infrastructure and Kubernetes deployments, OpenTelemetry/SigNoz observability, and an Insider → S3 data pipeline.",
+          "Business systems: finance-operations automation, payroll onboarding, complaint monitoring dashboard, and an AI chatbot with an internal AI Gateway.",
         ],
       },
     ],
+    link: { label: "See case studies", href: "#work" },
   },
   {
     role: "IT Development Program",
@@ -268,10 +245,10 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Languages", items: ["Kotlin", "TypeScript", "JavaScript", "PHP", "Java", "Dart", "SQL"] },
-  { group: "Mobile", items: ["Kotlin Multiplatform", "Compose Multiplatform", "Ktor", "Flutter", "Ionic", "Android", "iOS"] },
-  { group: "Web & Backend", items: ["Laravel", "Next.js", "React", "Node.js", "Fastify", "Express.js", "Spring Boot", "REST API"] },
-  { group: "Data & Messaging", items: ["PostgreSQL", "MySQL", "SQL Server", "Apache Cassandra", "Redis", "Apache Kafka", "Typesense", "S3"] },
+  { group: "Frontend", items: ["Next.js", "React", "TypeScript", "JavaScript"] },
+  { group: "Backend", items: ["Node.js", "Fastify", "Express.js", "Laravel", "PHP", "Spring Boot", "Java", "REST API"] },
+  { group: "Mobile", items: ["Kotlin Multiplatform", "Compose Multiplatform", "Ktor", "Kotlin", "Flutter", "Dart", "Ionic", "Android", "iOS"] },
+  { group: "Data & Messaging", items: ["PostgreSQL", "MySQL", "SQL Server", "Apache Cassandra", "Redis", "Apache Kafka", "Typesense", "S3", "SQL"] },
   { group: "DevOps & Observability", items: ["Docker", "Kubernetes (Rancher RKE)", "ArgoCD", "Jenkins", "CI/CD", "Linux", "OpenTelemetry", "SigNoz"] },
   { group: "AI", items: ["LLM chatbot", "AI Gateway", "AI service integration"] },
   { group: "Security & Delivery", items: ["HSM encryption", "data masking", "FSD/SIT documentation", "Agile", "system & business analysis"] },

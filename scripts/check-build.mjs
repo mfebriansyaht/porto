@@ -25,7 +25,8 @@ const groups = [...slice("export const skills", "export const languages").matchA
 
 const required = [
   "Moch Febriansyah Trisnadi",
-  "Software Engineer",
+  "Full-Stack Engineer",
+  "Open to Full-Stack roles",
   ...roles,
   ...groups,
   "Freelance & Other Work",
