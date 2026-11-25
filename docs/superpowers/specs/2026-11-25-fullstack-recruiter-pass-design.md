@@ -284,3 +284,15 @@ Deploy = push to `main` (Vercel auto-deploys).
   `caseStudies` and `moreProjects` data. `TiltCard`/`usePointerFine` may
   be deleted if nothing else uses them.
 - **Hero on mobile:** need not fit one screen; the stack strip wraps.
+
+## Revision — after first build (owner feedback)
+
+- **Diagrams removed.** The owner asked for no architecture diagrams. Case
+  studies keep Problem / Built / Outcome + layer chips only;
+  `components/diagrams/` is deleted.
+- **No server count.** "17 production servers" is removed from the site and
+  the CV ("provisioned production servers …").
+- **CV synced with the site** (built from `D:\Febri\CV\build\content.js`):
+  title "Full-Stack Engineer | Web, Mobile & Backend for Banking", summary
+  opens "Full-stack engineer with 4+ years…", no "Lead" wording. The site's
+  `profile.summary` and downloadable PDF follow the CV.
