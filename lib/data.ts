@@ -9,7 +9,7 @@ export const profile = {
   subtitle: "Full-Stack & Mobile · Banking Systems",
   location: "South Jakarta, Indonesia",
   summary:
-    "Software engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Lead developer of the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
+    "Software engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Developer on the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
   photo: "/profile.webp",
   cvUrl: "/Moch_Febriansyah_Trisnadi_CV.pdf",
 } as const;
@@ -23,8 +23,6 @@ export const contact = {
 
 export const stats: { value: number; suffix: string; label: string }[] = [
   { value: 4, suffix: "+", label: "Years experience" },
-  { value: 17, suffix: "", label: "Production servers" },
-  { value: 2, suffix: "", label: "Platforms led" },
 ];
 
 export type FeaturedWork = {
@@ -43,7 +41,7 @@ export const featuredWork: FeaturedWork[] = [
   {
     id: "m-smile",
     title: "M-Smile Mobile Banking Revamp",
-    role: "Lead Developer",
+    role: "Developer",
     summary:
       "Rebuilt the mobile banking app from React Native to Kotlin Multiplatform and Compose Multiplatform, with a single shared codebase for Android and iOS.",
     highlights: [
@@ -57,7 +55,7 @@ export const featuredWork: FeaturedWork[] = [
   {
     id: "loyalty",
     title: "Loyalty Platform",
-    role: "Lead Developer",
+    role: "Developer",
     summary:
       "Production Loyalty platform: provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
     highlights: [
@@ -197,7 +195,7 @@ export const experience: ExperienceItem[] = [
       {
         heading: "Mobile Banking",
         bullets: [
-          "Lead developer of the M-Smile mobile banking app revamp, rebuilding it from React Native to Kotlin Multiplatform and Compose Multiplatform with a single shared codebase for Android and iOS.",
+          "Developer on the M-Smile mobile banking app revamp, rebuilding it from React Native to Kotlin Multiplatform and Compose Multiplatform with a single shared codebase for Android and iOS.",
           "Implemented eKYC face verification, HSM-based request encryption with certificate pinning, and seamless migration of login, biometric settings, and user preferences from the previous app without re-registration.",
           "Built a shared design system foundation (consistent components, accessibility for large text sizes, unified error and offline handling) applied across all app modules.",
           "Developed the CT Connect Flutter app for communication, onboarding, jobs, and merchant promotions; contributed features to the existing mobile banking app.",
@@ -206,7 +204,7 @@ export const experience: ExperienceItem[] = [
       {
         heading: "Platform, Infrastructure & Observability",
         bullets: [
-          "Lead developer of the production Loyalty platform: provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
+          "Developer on the production Loyalty platform: provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
           "Deployed microservices to Kubernetes (Rancher RKE) using ArgoCD GitOps and Jenkins pipelines; troubleshot pod failures, configuration, and connectivity issues across environments.",
           "Built a standardized OpenTelemetry instrumentation package for Java 8+ applications with sensitive-data masking, integrated with SigNoz for metrics, traces, and logs.",
           "Built a TypeScript/Node.js pipeline exporting customer engagement data from Insider to S3-compatible storage, with a Fastify API for downstream teams and Jest test coverage.",

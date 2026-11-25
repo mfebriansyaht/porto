@@ -34,5 +34,5 @@ describe("data", () => {
       expect(fs.existsSync(pub(p)), p).toBe(true);
     }
   });
-  it("stats", () => expect(stats.map((s) => s.value)).toEqual([4, 17, 2]));
+  it("stats", () => expect(stats.map((s) => s.value)).toEqual([4]));
 });

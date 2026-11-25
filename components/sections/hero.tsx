@@ -89,11 +89,11 @@ export function Hero() {
       </div>
 
       <div className="hero-in mt-14" style={d(200)}>
-        <dl className="grid grid-cols-3 gap-3 sm:gap-4">
+        <dl className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {stats.map((s) => (
             <div
               key={s.label}
-              className="flex flex-col-reverse rounded-2xl border border-[var(--border)] bg-[var(--card)] px-3 py-5 text-center sm:px-6"
+              className="flex min-w-0 flex-1 flex-col-reverse rounded-2xl sm:max-w-xs border border-[var(--border)] bg-[var(--card)] px-3 py-5 text-center sm:px-6"
             >
               <dt className="mt-1 text-xs text-[var(--muted)] sm:text-sm">{s.label}</dt>
               <dd className="font-display text-4xl font-medium sm:text-5xl">
