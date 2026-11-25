@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
-import { FeaturedWork } from "@/components/sections/featured-work";
+import { CaseStudies } from "@/components/sections/case-studies";
 import { MobileApps } from "@/components/sections/mobile-apps";
 import { Experience } from "@/components/sections/experience";
 import { Skills } from "@/components/sections/skills";
@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
-        <FeaturedWork />
+        <CaseStudies />
         <MobileApps />
         <Experience />
         <Skills />

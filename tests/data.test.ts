@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import fs from "fs";
 import path from "path";
-import { apps, experience, featuredWork, profile, skills, stats } from "@/lib/data";
+import { apps, caseStudies, experience, moreProjects, profile, skills, stats } from "@/lib/data";
 
 const pub = (p: string) => path.join(process.cwd(), "public", p);
 
@@ -38,11 +38,19 @@ describe("data", () => {
     expect(bm.link).toEqual({ label: "See case studies", href: "#work" });
   });
   it("no lead wording", () =>
-    expect(JSON.stringify({ profile, experience, skills })).not.toMatch(/\blead\b/i));
-  it("featured work ids", () =>
-    expect(featuredWork.map((f) => f.id)).toEqual([
-      "m-smile", "loyalty", "observability", "ai-gateway",
-      "finance-ops", "insider-pipeline", "payroll-complaint",
+    expect(JSON.stringify({ profile, experience, skills, caseStudies, moreProjects })).not.toMatch(/\blead\b/i));
+  it("case studies", () =>
+    expect(caseStudies.map((c) => c.id)).toEqual(["finance-ops", "m-smile", "loyalty"]));
+  it("case studies have problem/built/outcome", () => {
+    for (const c of caseStudies) {
+      expect(c.problem.length).toBeGreaterThan(20);
+      expect(c.built.length).toBeGreaterThan(0);
+      expect(c.outcome.length).toBeGreaterThan(20);
+    }
+  });
+  it("more projects", () =>
+    expect(moreProjects.map((p) => p.title)).toEqual([
+      "Observability", "AI Chatbot & AI Gateway", "Insider → S3 Data Pipeline", "Payroll Onboarding & Complaint Dashboard",
     ]));
   it("apps grouping", () => {
     expect(apps.filter((a) => a.group === "freelance").map((a) => a.title)).toEqual([

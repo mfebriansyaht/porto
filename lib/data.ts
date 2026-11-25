@@ -27,105 +27,102 @@ export const stats: { value: number; suffix: string; label: string }[] = [
   { value: 4, suffix: "+", label: "Years experience" },
 ];
 
-export type FeaturedWork = {
-  id: string;
+export type CaseStudy = {
+  id: "finance-ops" | "m-smile" | "loyalty";
   title: string;
-  role: string;
-  summary: string;
-  highlights: string[];
-  stack: string[];
-  size: "lg" | "sm";
-  /** lucide-react icon name */
-  icon: string;
+  role: "Developer";
+  problem: string;
+  built: string[];
+  outcome: string;
+  layers: { label: string; items: string[] }[];
 };
 
-export const featuredWork: FeaturedWork[] = [
+export const caseStudies: CaseStudy[] = [
+  {
+    id: "finance-ops",
+    title: "Finance Operations Automation",
+    role: "Developer",
+    problem:
+      "Reconciliation, GL posting, settlement, forex claims and Mark-to-Market statements relied on manual Excel processes.",
+    built: [
+      "Third-party biller reconciliation (Artajasa, Finnet), general-ledger posting, and fund settlement workflows.",
+      "Bulk posting for offline credit card payments via BCA and Mandiri channels, with multi-level approval and reporting.",
+      "Merchant settlement reporting that imports transaction data, supports bulk upload and approval, and emails Excel reports automatically.",
+      "A foreign-exchange claim, approval, and reimbursement workflow, and automated Mark-to-Market statement generation.",
+    ],
+    outcome:
+      "Manual Excel processes replaced by workflows with bulk upload, multi-level approval and automatic Excel email reports.",
+    layers: [
+      { label: "Frontend", items: ["Laravel web UI"] },
+      { label: "Backend", items: ["Laravel"] },
+      { label: "Data", items: ["SQL Server"] },
+    ],
+  },
   {
     id: "m-smile",
     title: "M-Smile Mobile Banking Revamp",
     role: "Developer",
-    summary:
-      "Rebuilt the mobile banking app from React Native to Kotlin Multiplatform and Compose Multiplatform, with a single shared codebase for Android and iOS.",
-    highlights: [
-      "Implemented eKYC face verification, HSM-based request encryption with certificate pinning, and seamless migration of login, biometric settings, and user preferences from the previous app without re-registration.",
-      "Built a shared design system foundation (consistent components, accessibility for large text sizes, unified error and offline handling) applied across all app modules.",
+    problem:
+      "Rebuild the app from React Native into one shared codebase for Android and iOS, and move existing users over without re-registration.",
+    built: [
+      "Rebuilt the app with Kotlin Multiplatform and Compose Multiplatform on a single shared codebase for Android and iOS.",
+      "eKYC face verification, HSM-based request encryption with certificate pinning, and migration of login, biometric settings, and user preferences.",
+      "A shared design system foundation: consistent components, accessibility for large text sizes, unified error and offline handling.",
     ],
-    stack: ["Kotlin Multiplatform", "Compose Multiplatform", "Ktor", "Android", "iOS", "HSM"],
-    size: "lg",
-    icon: "Smartphone",
+    outcome:
+      "One Kotlin Multiplatform codebase for Android and iOS; login, biometric settings and preferences carried over without re-registration.",
+    layers: [
+      { label: "Mobile", items: ["Kotlin Multiplatform", "Compose Multiplatform"] },
+      { label: "Networking", items: ["Ktor"] },
+      { label: "Security", items: ["HSM encryption", "Certificate pinning", "eKYC"] },
+    ],
   },
   {
     id: "loyalty",
     title: "Loyalty Platform",
     role: "Developer",
-    summary:
-      "Production Loyalty platform: provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
-    highlights: [
+    problem:
+      "Stand up the production data and messaging infrastructure for the Loyalty platform and deploy its microservices.",
+    built: [
+      "Provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
       "Deployed microservices to Kubernetes (Rancher RKE) using ArgoCD GitOps and Jenkins pipelines.",
       "Troubleshot pod failures, configuration, and connectivity issues across environments.",
     ],
-    stack: ["Kafka", "Redis Cluster", "Cassandra", "Typesense", "PostgreSQL", "Kubernetes", "ArgoCD", "Jenkins"],
-    size: "lg",
-    icon: "Server",
-  },
-  {
-    id: "observability",
-    title: "Observability",
-    role: "Developer",
-    summary:
-      "Built a standardized OpenTelemetry instrumentation package for Java 8+ applications with sensitive-data masking, integrated with SigNoz for metrics, traces, and logs.",
-    highlights: [],
-    stack: ["OpenTelemetry", "SigNoz", "Java"],
-    size: "sm",
-    icon: "Activity",
-  },
-  {
-    id: "ai-gateway",
-    title: "AI Chatbot & AI Gateway",
-    role: "Developer",
-    summary:
-      "Developed an AI-powered chatbot and built an internal AI Gateway centralizing access to AI services across the bank.",
-    highlights: [],
-    stack: ["LLM chatbot", "AI Gateway"],
-    size: "sm",
-    icon: "Bot",
-  },
-  {
-    id: "finance-ops",
-    title: "Finance Operations Automation",
-    role: "Developer",
-    summary:
-      "Automated third-party biller reconciliation (Artajasa, Finnet), general-ledger posting, and fund settlement workflows.",
-    highlights: [
-      "Built bulk posting for offline credit card payments via BCA and Mandiri channels, including multi-level approval and reporting.",
-      "Developed merchant settlement reporting that imports transaction data, supports bulk upload and approval, and emails Excel reports automatically.",
-      "Created a foreign-exchange claim, approval, and reimbursement workflow and automated Mark-to-Market statement generation, replacing manual Excel processes.",
+    outcome:
+      "17 production servers provisioned; microservices deployed to Kubernetes through ArgoCD GitOps and Jenkins.",
+    layers: [
+      { label: "Backend", items: ["Microservices"] },
+      { label: "Data", items: ["Kafka", "Redis Cluster", "Cassandra", "Typesense", "PostgreSQL"] },
+      { label: "Infra", items: ["Kubernetes", "ArgoCD", "Jenkins"] },
     ],
-    stack: ["Laravel", "SQL Server"],
-    size: "sm",
-    icon: "Landmark",
+  },
+];
+
+export type MoreProject = { title: string; summary: string; stack: string[] };
+
+export const moreProjects: MoreProject[] = [
+  {
+    title: "Observability",
+    summary:
+      "Standardized OpenTelemetry instrumentation package for Java 8+ applications with sensitive-data masking, integrated with SigNoz for metrics, traces, and logs.",
+    stack: ["OpenTelemetry", "SigNoz", "Java"],
   },
   {
-    id: "insider-pipeline",
+    title: "AI Chatbot & AI Gateway",
+    summary: "AI-powered chatbot and an internal AI Gateway centralizing access to AI services across the bank.",
+    stack: ["LLM chatbot", "AI Gateway"],
+  },
+  {
     title: "Insider → S3 Data Pipeline",
-    role: "Developer",
     summary:
-      "Built a TypeScript/Node.js pipeline exporting customer engagement data from Insider to S3-compatible storage, with a Fastify API for downstream teams and Jest test coverage.",
-    highlights: [],
+      "TypeScript/Node.js pipeline exporting customer engagement data from Insider to S3-compatible storage, with a Fastify API for downstream teams and Jest test coverage.",
     stack: ["TypeScript", "Node.js", "Fastify", "S3", "Jest"],
-    size: "sm",
-    icon: "Database",
   },
   {
-    id: "payroll-complaint",
     title: "Payroll Onboarding & Complaint Dashboard",
-    role: "Developer",
     summary:
-      "Built a Next.js/Fastify payroll onboarding platform digitizing payroll account opening for corporate employees, and a real-time complaint monitoring dashboard (Next.js, Express.js).",
-    highlights: [],
+      "Payroll onboarding platform digitizing payroll account opening for corporate employees, and a real-time complaint monitoring dashboard.",
     stack: ["Next.js", "Fastify", "Express.js"],
-    size: "sm",
-    icon: "LayoutDashboard",
   },
 ];
 
