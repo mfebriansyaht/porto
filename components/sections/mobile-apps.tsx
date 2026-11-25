@@ -30,7 +30,7 @@ function AppCard({ app }: { app: App }) {
             href={app.playStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex min-h-11 w-fit items-center gap-2 rounded-full bg-gradient-to-r from-btn-from to-btn-to px-5 text-sm font-semibold text-white shadow-lg shadow-[var(--accent-to)]/20 transition-transform hover:scale-[1.03]"
+            className="mt-5 inline-flex min-h-11 w-fit items-center gap-2 rounded-full bg-[var(--accent)] px-5 text-sm font-semibold text-[var(--accent-fg)] transition-opacity hover:opacity-90"
           >
             Get it on Google Play <ExternalLink className="h-4 w-4" aria-hidden />
           </a>

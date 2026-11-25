@@ -180,3 +180,17 @@ summary, Open Graph image (generated via `next/og` or static), favicon.
 - Exact colors/shades within the blue→violet dark theme.
 - Exact card copy wording, as long as every claim traces to the CV.
 - Whether to use `framer-motion` or `motion` package.
+
+## Revision 2026-11-25 — visual style
+
+Owner feedback: the blue→violet dark theme "looks too AI". Replaces the
+"Visual style" section above:
+
+- **Light mode is the default** (warm cream `#f5f2ea`, text `#1c1b18`);
+  dark mode via toggle (`#121412`), class `dark` on `<html>`, localStorage
+  key `theme`.
+- One solid accent, deep green (`#1f5e46` light / `#7cc4a0` dark). No
+  gradients, glows, grid pattern, or cursor glow on cards.
+- Display headings (hero h1, section h2, stats) in Fraunces serif; body in
+  Geist Sans. Hero name in italic accent.
+- All text/background pairs ≥ 6:1 contrast in both themes.

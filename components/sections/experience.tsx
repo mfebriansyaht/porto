@@ -19,7 +19,7 @@ export function Experience() {
         <div aria-hidden className="absolute bottom-2 left-[15px] top-2 w-px bg-[var(--border)] sm:left-[19px]" />
         <motion.div
           aria-hidden
-          className="absolute bottom-2 left-[15px] top-2 w-px origin-top bg-gradient-to-b from-accent-from to-accent-to sm:left-[19px]"
+          className="absolute bottom-2 left-[15px] top-2 w-px origin-top bg-[var(--accent)] sm:left-[19px]"
           style={{ scaleY: reduced ? 1 : progress }}
         />
         <ol className="space-y-8">
@@ -27,11 +27,11 @@ export function Experience() {
             const Icon = item.kind === "education" ? GraduationCap : Briefcase;
             return (
               <li key={`${item.org}-${item.period}`} className="relative">
-                <span className="absolute -left-10 top-5 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[var(--accent-from)] sm:-left-14 sm:h-10 sm:w-10">
+                <span className="absolute -left-10 top-5 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[var(--accent)] sm:-left-14 sm:h-10 sm:w-10">
                   <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
                 </span>
                 <Reveal delay={i * 0.05}>
-                  <article className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 backdrop-blur-sm sm:p-6">
+                  <article className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 sm:p-6">
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0">
                         <h3 className="break-words text-lg font-semibold leading-snug">{item.role}</h3>
@@ -48,9 +48,9 @@ export function Experience() {
                       {item.groups.map((g, gi) => (
                         <div key={gi}>
                           {g.heading && (
-                            <h4 className="mb-2 text-sm font-semibold text-[var(--accent-from)]">{g.heading}</h4>
+                            <h4 className="mb-2 text-sm font-semibold text-[var(--accent)]">{g.heading}</h4>
                           )}
-                          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)] marker:text-[var(--accent-from)]">
+                          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)] marker:text-[var(--accent)]">
                             {g.bullets.map((b) => (
                               <li key={b} className="break-words">
                                 {b}

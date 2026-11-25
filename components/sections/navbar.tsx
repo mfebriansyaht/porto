@@ -43,7 +43,7 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6"
       >
         <a href="#home" className="text-lg font-bold tracking-tight">
-          MFT<span className="bg-gradient-to-r from-accent-from to-accent-to bg-clip-text text-transparent">.</span>
+          MFT<span className="text-[var(--accent)]">.</span>
         </a>
         <div className="hidden items-center gap-1 md:flex">
           {navLinks.map((l) => (

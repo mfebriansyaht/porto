@@ -16,13 +16,13 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          color: "#e8ecf4",
-          background: "linear-gradient(135deg, #07090f 0%, #121a35 55%, #2a1a5e 100%)",
+          color: "#1c1b18",
+          background: "#f5f2ea",
         }}
       >
         <div style={{ fontSize: 72, fontWeight: 700, lineHeight: 1.1 }}>{profile.name}</div>
-        <div style={{ fontSize: 44, marginTop: 28, color: "#8bb4ff" }}>{profile.title}</div>
-        <div style={{ fontSize: 30, marginTop: 16, color: "#8b94a8" }}>{profile.subtitle}</div>
+        <div style={{ fontSize: 44, marginTop: 28, color: "#1f5e46" }}>{profile.title}</div>
+        <div style={{ fontSize: 30, marginTop: 16, color: "#5c584f" }}>{profile.subtitle}</div>
       </div>
     ),
     size,

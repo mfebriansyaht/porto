@@ -3,7 +3,7 @@ import { useRef, type CSSProperties, type ReactNode } from "react";
 import { useReducedMotion } from "motion/react";
 import { usePointerFine } from "@/components/ui/use-pointer-fine";
 
-const MAX_TILT = 6;
+const MAX_TILT = 4;
 
 export function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
   const interactive = fine && !reduced;
 
   const base =
-    "relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-sm transition-[border-color] duration-300 " +
+    "relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] transition-[border-color] duration-300 " +
     className;
 
   if (!interactive) return <div className={base}>{children}</div>;
@@ -25,16 +25,12 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
     const py = (e.clientY - r.top) / r.height;
     el.style.setProperty("--rx", `${((0.5 - py) * 2 * MAX_TILT).toFixed(2)}deg`);
     el.style.setProperty("--ry", `${((px - 0.5) * 2 * MAX_TILT).toFixed(2)}deg`);
-    el.style.setProperty("--mx", `${(px * 100).toFixed(1)}%`);
-    el.style.setProperty("--my", `${(py * 100).toFixed(1)}%`);
-    el.style.setProperty("--glow", "1");
   }
   function onLeave() {
     const el = ref.current;
     if (!el) return;
     el.style.setProperty("--rx", "0deg");
     el.style.setProperty("--ry", "0deg");
-    el.style.setProperty("--glow", "0");
   }
 
   const style = {
@@ -49,18 +45,9 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
       onPointerLeave={onLeave}
       onPointerCancel={onLeave}
       style={style}
-      className={base + " hover:border-[var(--accent-from)]"}
+      className={base + " hover:border-[var(--accent)]"}
     >
       {children}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
-        style={{
-          opacity: "var(--glow, 0)",
-          background:
-            "radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(139,92,246,0.18), transparent 70%)",
-        }}
-      />
     </div>
   );
 }

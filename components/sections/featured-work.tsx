@@ -46,12 +46,12 @@ export function FeaturedWork() {
               <TiltCard className="h-full">
                 <article className="flex h-full flex-col p-6">
                   <div className="flex items-start gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-from to-accent-to text-white shadow-lg shadow-[var(--accent-to)]/20">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <div className="min-w-0">
                       <h3 className="break-words text-lg font-semibold leading-snug">{w.title}</h3>
-                      <p className="mt-0.5 font-mono text-xs uppercase tracking-wider text-[var(--accent-from)]">
+                      <p className="mt-0.5 font-mono text-xs uppercase tracking-wider text-[var(--accent)]">
                         {w.role}
                       </p>
                     </div>
@@ -63,7 +63,7 @@ export function FeaturedWork() {
                         <li key={h} className="flex gap-2">
                           <span
                             aria-hidden
-                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-accent-from to-accent-to"
+                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"
                           />
                           <span className="min-w-0">{h}</span>
                         </li>

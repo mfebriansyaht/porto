@@ -2,11 +2,11 @@ import { describe, it, expect } from "vitest";
 import { resolveTheme, THEME_SCRIPT } from "@/lib/theme";
 
 describe("resolveTheme", () => {
-  it("returns light only for 'light'", () => {
+  it("returns dark only for 'dark'", () => {
     expect(resolveTheme("light")).toBe("light");
     expect(resolveTheme("dark")).toBe("dark");
-    expect(resolveTheme(null)).toBe("dark");
-    expect(resolveTheme("blue")).toBe("dark");
+    expect(resolveTheme(null)).toBe("light");
+    expect(resolveTheme("blue")).toBe("light");
   });
 });
 
@@ -25,13 +25,12 @@ describe("THEME_SCRIPT", () => {
       },
     };
     new Function("localStorage", "document", THEME_SCRIPT)(ls, doc);
-    return cls.has("light");
+    return cls.has("dark");
   };
   it("matches resolveTheme", () => {
-    expect(run("light")).toBe(true);
-    expect(run("dark")).toBe(false);
-    expect(run(null)).toBe(false);
-    expect(run("blue")).toBe(false);
-    expect(run(null, true)).toBe(false);
+    for (const v of ["light", "dark", null, "blue"]) {
+      expect(run(v)).toBe(resolveTheme(v) === "dark");
+    }
+    expect(run("dark", true)).toBe(false);
   });
 });
