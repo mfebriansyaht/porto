@@ -20,7 +20,7 @@ export function Experience() {
         <motion.div
           aria-hidden
           className="absolute bottom-2 left-[15px] top-2 w-px origin-top bg-gradient-to-b from-accent-from to-accent-to sm:left-[19px]"
-          style={reduced ? undefined : { scaleY: progress }}
+          style={{ scaleY: reduced ? 1 : progress }}
         />
         <ol className="space-y-8">
           {experience.map((item, i) => {
