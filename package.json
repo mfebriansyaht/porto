@@ -13,10 +13,10 @@
     "next": "15.5.29",
     "react": "^19",
     "react-dom": "^19",
-    "motion": "latest",
-    "lucide-react": "latest",
-    "react-icons": "latest",
-    "geist": "latest"
+    "motion": "^14.14.0",
+    "lucide-react": "^1.80.0",
+    "react-icons": "^5.7.0",
+    "geist": "^1.9.2"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -28,7 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.29",
     "@eslint/eslintrc": "^3",
-    "vitest": "latest",
-    "sharp": "latest"
+    "vitest": "^5.1.1",
+    "sharp": "^0.35.5"
   }
 }
