@@ -11,7 +11,7 @@ export const profile = {
   stack: ["Next.js", "Node.js", "Laravel", "Kotlin", "PostgreSQL", "Kafka", "Kubernetes"],
   location: "South Jakarta, Indonesia",
   summary:
-    "Software engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Developer on the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
+    "Full-stack engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Developer on the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
   photo: "/profile.webp",
   cvUrl: "/Moch_Febriansyah_Trisnadi_CV.pdf",
 } as const;
@@ -84,12 +84,12 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "Stand up the production data and messaging infrastructure for the Loyalty platform and deploy its microservices.",
     built: [
-      "Provisioned 17 production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
+      "Provisioned production servers running Redis Cluster, Apache Kafka (KRaft), Apache Cassandra, Typesense, and PostgreSQL with streaming replication.",
       "Deployed microservices to Kubernetes (Rancher RKE) using ArgoCD GitOps and Jenkins pipelines.",
       "Troubleshot pod failures, configuration, and connectivity issues across environments.",
     ],
     outcome:
-      "17 production servers provisioned; microservices deployed to Kubernetes through ArgoCD GitOps and Jenkins.",
+      "Production servers provisioned; microservices deployed to Kubernetes through ArgoCD GitOps and Jenkins.",
     layers: [
       { label: "Backend", items: ["Microservices"] },
       { label: "Data", items: ["Kafka", "Redis Cluster", "Cassandra", "Typesense", "PostgreSQL"] },

@@ -39,6 +39,9 @@ describe("data", () => {
   });
   it("no lead wording", () =>
     expect(JSON.stringify({ profile, experience, skills, caseStudies, moreProjects })).not.toMatch(/\blead\b/i));
+  it("no server count claims (owner removed the number)", () =>
+    expect(JSON.stringify({ profile, experience, caseStudies, moreProjects })).not.toMatch(/\b17\b/));
+  it("summary matches the CV framing", () => expect(profile.summary.startsWith("Full-stack engineer with 4+ years")).toBe(true));
   it("case studies", () =>
     expect(caseStudies.map((c) => c.id)).toEqual(["finance-ops", "m-smile", "loyalty"]));
   it("case studies have problem/built/outcome", () => {
