@@ -36,7 +36,7 @@ export function FeaturedWork() {
   });
 
   return (
-    <section id="work" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:px-6">
+    <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-6">
       <SectionHeading eyebrow="Featured Work" title="Things I've built and shipped" />
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {items.map((w, i) => {

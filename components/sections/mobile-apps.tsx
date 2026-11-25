@@ -44,7 +44,7 @@ export function MobileApps() {
   const primary = apps.filter((a) => a.group === "bank-mega");
   const freelance = apps.filter((a) => a.group === "freelance");
   return (
-    <section id="apps" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:px-6">
+    <section id="apps" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-6">
       <SectionHeading eyebrow="Mobile Apps" title="Mobile apps on Play Store" />
       <div className="grid grid-cols-1 gap-5">
         {primary.map((a, i) => (

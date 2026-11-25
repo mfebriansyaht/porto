@@ -13,7 +13,7 @@ const iconLink =
 export function Hero() {
   const words = profile.title.split(" ");
   return (
-    <section id="home" className="mx-auto max-w-6xl px-5 pb-20 pt-14 sm:px-6 sm:pt-20 lg:pt-28">
+    <section id="home" className="mx-auto max-w-6xl scroll-mt-24 px-5 pb-20 pt-14 sm:px-6 sm:pt-20 lg:pt-28">
       <div className="flex flex-col items-center gap-10 text-center lg:flex-row-reverse lg:justify-between lg:text-left">
         <Reveal>
           <div className="rounded-full bg-gradient-to-br from-accent-from to-accent-to p-1 shadow-[0_0_80px_-10px_var(--accent-to)]">
