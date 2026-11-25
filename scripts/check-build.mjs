@@ -50,6 +50,17 @@ for (const tag of h1) {
   if (/opacity:\s*0(?![.\d])/.test(tag)) failures.push(`hero <h1> has inline opacity:0: ${tag}`);
 }
 
+const heroStart = html.indexOf('id="home"');
+const heroEnd = html.indexOf("<section", heroStart + 1);
+if (heroStart === -1) failures.push('hero section id="home" not found');
+else {
+  const hero = html.slice(heroStart, heroEnd === -1 ? undefined : heroEnd);
+  const tags = hero.match(/<[a-zA-Z][^>]*>/g) ?? [];
+  for (const tag of tags) {
+    if (/opacity:\s*0(?![.\d])/.test(tag) && !/tabular-nums/.test(tag)) failures.push(`hero element has inline opacity:0: ${tag}`);
+  }
+}
+
 if (failures.length) {
   console.error(`check-build FAILED (${file}):\n - ${failures.join("\n - ")}`);
   process.exit(1);

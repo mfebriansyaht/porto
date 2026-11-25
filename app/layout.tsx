@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   metadataBase: siteUrl(),
   title,
   description,
-  openGraph: { title, description, type: "website" },
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", title, description, type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 
@@ -28,6 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Providers>{children}</Providers>
       </body>
     </html>

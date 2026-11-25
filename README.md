@@ -23,6 +23,6 @@ npm run check   # production build + assertions on the prerendered HTML
 
 ## Deploying (Vercel)
 
-1. **GitHub token for pushing.** On GitHub go to Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token, with the `repo` scope. Use this token as the password when `git push` asks for credentials.
+1. **GitHub token for pushing.** On GitHub go to Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Limit it to the `porto` repository only, with Repository permissions → Contents: Read and write. Use this token as the password when `git push` asks for credentials. Alternatively, sign in through Git Credential Manager and skip tokens entirely.
 2. **Import into Vercel.** Go to [vercel.com](https://vercel.com), log in with the GitHub account `mfebriansyaht`, then Add New → Project → import the `porto` repository → Deploy. Next.js is auto-detected and no environment variables are needed.
 3. **Auto-deploy.** Every push to `main` deploys automatically.

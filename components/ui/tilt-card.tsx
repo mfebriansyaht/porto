@@ -51,6 +51,7 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
       style={style}
       className={base + " hover:border-[var(--accent-from)]"}
     >
+      {children}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-opacity duration-300"
@@ -60,7 +61,6 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
             "radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(139,92,246,0.18), transparent 70%)",
         }}
       />
-      {children}
     </div>
   );
 }

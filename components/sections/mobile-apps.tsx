@@ -19,7 +19,7 @@ function AppCard({ app }: { app: App }) {
           className="h-24 w-24 shrink-0 rounded-2xl border border-[var(--border)] object-cover sm:h-28 sm:w-28"
         />
         <div className="flex min-w-0 flex-1 flex-col">
-          <h4 className="break-words text-lg font-semibold leading-snug">{app.title}</h4>
+          <h3 className="break-words text-lg font-semibold leading-snug">{app.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{app.description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {app.tags.map((t) => (
@@ -30,7 +30,7 @@ function AppCard({ app }: { app: App }) {
             href={app.playStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex min-h-11 w-fit items-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-to px-5 text-sm font-semibold text-white shadow-lg shadow-[var(--accent-to)]/20 transition-transform hover:scale-[1.03]"
+            className="mt-5 inline-flex min-h-11 w-fit items-center gap-2 rounded-full bg-gradient-to-r from-btn-from to-btn-to px-5 text-sm font-semibold text-white shadow-lg shadow-[var(--accent-to)]/20 transition-transform hover:scale-[1.03]"
           >
             Get it on Google Play <ExternalLink className="h-4 w-4" aria-hidden />
           </a>
