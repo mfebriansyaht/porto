@@ -18,7 +18,7 @@ describe("data", () => {
     expect(profile.title).toBe("Full-Stack Engineer");
     expect(profile.subtitle).toBe("Web, mobile & backend systems for banking");
     expect(profile.availability).toBe("Open to Full-Stack roles");
-    expect(profile.stack).toEqual(["Next.js", "Node.js", "Laravel", "Kotlin", "Flutter", "PostgreSQL", "Kafka", "Kubernetes"]);
+    expect(profile.stack).toEqual(["TypeScript", "Next.js", "Node.js", "Laravel", "Kotlin", "Flutter", "PostgreSQL", "Kafka", "Docker", "Kubernetes"]);
   });
   it("skills grouped by layer", () =>
     expect(skills.map((s) => s.group)).toEqual([

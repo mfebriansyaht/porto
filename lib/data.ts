@@ -8,7 +8,7 @@ export const profile = {
   title: "Full-Stack Engineer",
   subtitle: "Web, mobile & backend systems for banking",
   availability: "Open to Full-Stack roles",
-  stack: ["Next.js", "Node.js", "Laravel", "Kotlin", "Flutter", "PostgreSQL", "Kafka", "Kubernetes"],
+  stack: ["TypeScript", "Next.js", "Node.js", "Laravel", "Kotlin", "Flutter", "PostgreSQL", "Kafka", "Docker", "Kubernetes"],
   location: "South Jakarta, Indonesia",
   summary:
     "Full-stack engineer with 4+ years of experience, including 3+ years building production web, mobile, and backend systems at PT Bank Mega Tbk. Developer on the M-Smile mobile banking revamp (Kotlin Multiplatform, Android & iOS) and the production Loyalty platform (Kafka, Redis Cluster, Cassandra, Kubernetes). Experienced in end-to-end delivery of secure, regulation-compliant systems, from functional specifications (FSD) and system integration testing (SIT) to production deployment and monitoring, including automation of finance operations such as reconciliation, payment posting, and settlement reporting.",
