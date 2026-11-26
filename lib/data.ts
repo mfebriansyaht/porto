@@ -28,7 +28,7 @@ export const stats: { value: number; suffix: string; label: string }[] = [
 ];
 
 export type CaseStudy = {
-  id: "finance-ops" | "m-smile" | "loyalty";
+  id: "finance-ops" | "loyalty";
   title: string;
   role: "Developer";
   problem: string;
@@ -59,25 +59,6 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    id: "m-smile",
-    title: "M-Smile Mobile Banking Revamp",
-    role: "Developer",
-    problem:
-      "Rebuild the app from React Native into one shared codebase for Android and iOS, and move existing users over without re-registration.",
-    built: [
-      "Rebuilt the app with Kotlin Multiplatform and Compose Multiplatform on a single shared codebase for Android and iOS.",
-      "eKYC face verification, HSM-based request encryption with certificate pinning, and migration of login, biometric settings, and user preferences.",
-      "A shared design system foundation: consistent components, accessibility for large text sizes, unified error and offline handling.",
-    ],
-    outcome:
-      "One Kotlin Multiplatform codebase for Android and iOS; login, biometric settings and preferences carried over without re-registration.",
-    layers: [
-      { label: "Mobile", items: ["Kotlin Multiplatform", "Compose Multiplatform"] },
-      { label: "Networking", items: ["Ktor"] },
-      { label: "Security", items: ["HSM encryption", "Certificate pinning", "eKYC"] },
-    ],
-  },
-  {
     id: "loyalty",
     title: "Loyalty Platform",
     role: "Developer",
@@ -101,6 +82,12 @@ export const caseStudies: CaseStudy[] = [
 export type MoreProject = { title: string; summary: string; stack: string[] };
 
 export const moreProjects: MoreProject[] = [
+  {
+    title: "M-Smile Mobile Banking Revamp",
+    summary:
+      "Rebuilt the mobile banking app from React Native to Kotlin Multiplatform and Compose Multiplatform, with a single shared codebase for Android and iOS.",
+    stack: ["Kotlin Multiplatform", "Compose Multiplatform", "Android", "iOS"],
+  },
   {
     title: "Observability",
     summary:

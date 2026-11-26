@@ -42,8 +42,10 @@ describe("data", () => {
   it("no server count claims (owner removed the number)", () =>
     expect(JSON.stringify({ profile, experience, caseStudies, moreProjects })).not.toMatch(/\b17\b/));
   it("summary matches the CV framing", () => expect(profile.summary.startsWith("Full-stack engineer with 4+ years")).toBe(true));
+  it("no eKYC / HSM pinning / design-system claims (owner removed them)", () =>
+    expect(JSON.stringify({ profile, experience, caseStudies, moreProjects })).not.toMatch(/eKYC|certificate pinning|design system|re-registration/i));
   it("case studies", () =>
-    expect(caseStudies.map((c) => c.id)).toEqual(["finance-ops", "m-smile", "loyalty"]));
+    expect(caseStudies.map((c) => c.id)).toEqual(["finance-ops", "loyalty"]));
   it("case studies have problem/built/outcome", () => {
     for (const c of caseStudies) {
       expect(c.problem.length).toBeGreaterThan(20);
@@ -53,7 +55,7 @@ describe("data", () => {
   });
   it("more projects", () =>
     expect(moreProjects.map((p) => p.title)).toEqual([
-      "Observability", "AI Chatbot & AI Gateway", "Insider → S3 Data Pipeline", "Payroll Onboarding & Complaint Dashboard",
+      "M-Smile Mobile Banking Revamp", "Observability", "AI Chatbot & AI Gateway", "Insider → S3 Data Pipeline", "Payroll Onboarding & Complaint Dashboard",
     ]));
   it("apps grouping", () => {
     expect(apps.filter((a) => a.group === "freelance").map((a) => a.title)).toEqual([
